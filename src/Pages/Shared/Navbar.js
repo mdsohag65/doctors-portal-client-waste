@@ -17,6 +17,10 @@ const Navbar = () => {
         <li><Link to="/review">Review</Link></li>
         <li><Link to="/contact">Contact us</Link></li>
         <li><Link to="/about">About</Link></li>
+        {
+            user && <li><Link to="/dashboard">DashBoard</Link></li>
+        }
+
         <li>{user ? <button className="btn btn-active btn-ghost" onClick={logout} >Sign Out</button> : <Link to="/login">Login</Link>}</li>
     </>
     return (
@@ -38,7 +42,11 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
+                <div className="navbar-end">
+                    <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open DashBoard</label>
+                </div>
             </div>
+
         </div>
     );
 };
